@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Evita que el celular guarde esta página de GitHub en su caché -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta - Mr. Hugo Parrillas</title>
+  <style>
+    /* Diseño general con fondo negro */
+    body {
+      background-color: #000000;
+      margin: 0;
+      padding-bottom: 30px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    /* Adapta las imágenes al celular y las centra */
+    img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block; /* Quita los espacios molestos entre las imágenes */
+      margin: 0 auto; /* Mantiene la carta centrada en pantallas grandes */
+    }
+    /* Estilo del botón dorado */
+    .boton-descarga {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 30px;
+      background-color: #f39c12;
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 2px solid #e67e22;
+    }
+  </style>
+</head>
+<body>
   
-    <meta http-equiv="refresh" content="0; url=https://www.dropbox.com/scl/fi/jt14kaezd8fpoybwvu58l/CartaMrHugoV2.pdf?rlkey=pwp93usv0vwfeilg9wz0tem2w&st=zzhbcv75&raw=1">
+  <!-- Aquí cargamos las dos páginas en orden -->
+  <img id="pagina1" src="" alt="Mr. Hugo Parrillas - Página 1">
+  <img id="pagina2" src="" alt="Mr. Hugo Parrillas - Página 2">
+  
+  <!-- Botón opcional para quien quiera el PDF completo -->
+  <a href="AQUI_PEGA_TU_LINK_DE_DROPBOX_TERMINADO_EN_dl=1" class="boton-descarga">Descargar menú completo en PDF</a>
+
+  <script>
+    // Calculamos el tiempo exacto para romper el caché
+    var tiempoActual = new Date().getTime();
     
-    <title>Cargando carta de Mr. Hugo...</title>
-  </head>
-  <body style="font-family: sans-serif; text-align: center; margin-top: 20%;">
-    <p>Redirigiendo a la carta...</p>
-  </body>
+    // Le inyectamos el tiempo a ambas páginas al mismo tiempo
+    document.getElementById('pagina1').src = "carta1.jpg?v=" + tiempoActual;
+    document.getElementById('pagina2').src = "carta2.jpg?v=" + tiempoActual;
+  </script>
+
+</body>
 </html>
