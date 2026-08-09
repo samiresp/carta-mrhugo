@@ -18,8 +18,8 @@
       width: 100%;
       max-width: 600px;
       height: auto;
-      display: block; /* Quita los espacios molestos entre las imágenes */
-      margin: 0 auto; /* Mantiene la carta centrada en pantallas grandes */
+      display: block; 
+      margin: 0 auto; 
     }
     /* Estilo del botón dorado */
     .boton-descarga {
@@ -38,20 +38,23 @@
 </head>
 <body>
   
-  <!-- Aquí cargamos las dos páginas en orden -->
+  <!-- Aquí cargamos las dos páginas optimizadas -->
   <img id="pagina1" src="" alt="Mr. Hugo Parrillas - Página 1">
   <img id="pagina2" src="" alt="Mr. Hugo Parrillas - Página 2">
   
-  <!-- Botón opcional para quien quiera el PDF completo -->
-  <a href="AQUI_PEGA_TU_LINK_DE_DROPBOX_TERMINADO_EN_dl=1" class="boton-descarga">Descargar menú completo en PDF</a>
+  <!-- Botón que descarga el PDF alojado en tu propio GitHub -->
+  <a id="enlacePdf" href="#" download="Carta_MrHugo.pdf" class="boton-descarga">Descargar menú completo en PDF</a>
 
   <script>
-    // Calculamos el tiempo exacto para romper el caché
+    // Calculamos el tiempo exacto para anular la memoria caché de todo
     var tiempoActual = new Date().getTime();
     
-    // Le inyectamos el tiempo a ambas páginas al mismo tiempo
+    // Inyectamos las imágenes optimizadas
     document.getElementById('pagina1').src = "carta1.jpg?v=" + tiempoActual;
     document.getElementById('pagina2').src = "carta2.jpg?v=" + tiempoActual;
+    
+    // Inyectamos el enlace de tu PDF forzando siempre la versión más reciente
+    document.getElementById('enlacePdf').href = "carta.pdf?v=" + tiempoActual;
   </script>
 
 </body>
