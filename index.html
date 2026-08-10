@@ -50,8 +50,8 @@
     var tiempoActual = new Date().getTime();
     
     // Inyectamos las imágenes optimizadas
-    document.getElementById('pagina1').src = "carta1.jpg?v=" + tiempoActual;
-    document.getElementById('pagina2').src = "carta2.jpg?v=" + tiempoActual;
+    document.getElementById('pagina1').src = "carta1v1.jpg?v=" + tiempoActual;
+    document.getElementById('pagina2').src = "carta2v1.jpg?v=" + tiempoActual;
     
     // Inyectamos el enlace de tu PDF forzando siempre la versión más reciente
     document.getElementById('enlacePdf').href = "Carta_MrHugo.pdf?v=" + tiempoActual;
